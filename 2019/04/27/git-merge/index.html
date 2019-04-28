@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//honglyua.github.io">
-  <title>Tag: hexo | Honglyua的博客</title>
+  <title>分支合并提前检测冲突 | Honglyua的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="工具服务，开源极客。非专业视觉设计师。">
-<meta name="keywords" content="开发者,程序猿,极客,编程,开源,Git,Programmer,Coder,Geek,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Honglyua的博客">
-<meta property="og:url" content="//honglyua.github.io/tags/hexo/index.html">
+  <meta name="description" content="多人开发场景中，经常会出现分支合并冲突的现象，同时解决起来也很麻烦.因为涉及多人修改同一处代码，有可能这段代码修改，已经过去很久了，很难知道应该保留哪一方的修改。严重影响了开发效率，为此需要提前发现冲突，提前修复  为什么要提前检测，能带来什么好处？ 早发现，早整治，能100%无冲突合入，提高合入率，减少返工率 能发现哪些文件哪些函数经常出现冲突，对这些文件及函数进行统一整改">
+<meta name="keywords" content="Git,流程,合并冲突">
+<meta property="og:type" content="article">
+<meta property="og:title" content="分支合并提前检测冲突">
+<meta property="og:url" content="//honglyua.github.io/2019/04/27/git-merge/index.html">
 <meta property="og:site_name" content="Honglyua的博客">
-<meta property="og:description" content="工具服务，开源极客。非专业视觉设计师。">
+<meta property="og:description" content="多人开发场景中，经常会出现分支合并冲突的现象，同时解决起来也很麻烦.因为涉及多人修改同一处代码，有可能这段代码修改，已经过去很久了，很难知道应该保留哪一方的修改。严重影响了开发效率，为此需要提前发现冲突，提前修复  为什么要提前检测，能带来什么好处？ 早发现，早整治，能100%无冲突合入，提高合入率，减少返工率 能发现哪些文件哪些函数经常出现冲突，对这些文件及函数进行统一整改">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="//honglyua.github.io/assets/blogImg/git-merge-conflict.png">
+<meta property="og:updated_time" content="2019-04-28T12:41:01.308Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Honglyua的博客">
-<meta name="twitter:description" content="工具服务，开源极客。非专业视觉设计师。">
+<meta name="twitter:title" content="分支合并提前检测冲突">
+<meta name="twitter:description" content="多人开发场景中，经常会出现分支合并冲突的现象，同时解决起来也很麻烦.因为涉及多人修改同一处代码，有可能这段代码修改，已经过去很久了，很难知道应该保留哪一方的修改。严重影响了开发效率，为此需要提前发现冲突，提前修复  为什么要提前检测，能带来什么好处？ 早发现，早整治，能100%无冲突合入，提高合入率，减少返工率 能发现哪些文件哪些函数经常出现冲突，对这些文件及函数进行统一整改">
+<meta name="twitter:image" content="//honglyua.github.io/assets/blogImg/git-merge-conflict.png">
   
   
   <link rel="stylesheet" type="text/css" href="/./main.266c1c.css">
@@ -144,68 +147,213 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-git-merge" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/27/hello-world/" class="archive-article-date">
-  	<time datetime="2019-04-27T02:57:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-27</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/27/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      分支合并提前检测冲突
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/04/27/git-merge/" class="archive-article-date">
+  	<time datetime="2019-04-27T12:22:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/assets/blogImg/git-merge-conflict.png" width="500"></p>
+
+<blockquote>
+<p>多人开发场景中，经常会出现分支合并冲突的现象，同时解决起来也很麻烦.<br>因为涉及多人修改同一处代码，有可能这段代码修改，已经过去很久了，很难知道应该保留哪一方的修改。<br>严重影响了开发效率，为此需要提前发现冲突，提前修复</p>
+</blockquote>
+<h3 id="为什么要提前检测，能带来什么好处？"><a href="#为什么要提前检测，能带来什么好处？" class="headerlink" title="为什么要提前检测，能带来什么好处？"></a>为什么要提前检测，能带来什么好处？</h3><ol>
+<li>早发现，早整治，能100%无冲突合入，提高合入率，减少返工率</li>
+<li>能发现哪些文件哪些函数经常出现冲突，对这些文件及函数进行统一整改</li>
+</ol>
+<a id="more"></a>
+<h3 id="怎么检测？检测的原理是什么？"><a href="#怎么检测？检测的原理是什么？" class="headerlink" title="怎么检测？检测的原理是什么？"></a>怎么检测？检测的原理是什么？</h3><p>场景举例：</p>
+<pre><code>1. 个人分支：personal
+2. 项目主干分支：master
+3. 开发人员在个人分支上进行特性开发，期间可能会往远端库推送多次，最终会合入到主干分支
+</code></pre><h4 id="检测时机"><a href="#检测时机" class="headerlink" title="检测时机"></a>检测时机</h4><ol>
+<li>分支推送到远端库后，自动触发自动化构建检测<ul>
+<li>缺点：频繁检测，浪费资源，可能要修复冲突多次</li>
+</ul>
+</li>
+<li>分支需要合入主干时，如创建Merge/Pull Request后，发起检测<ul>
+<li>优点：在需要时检测，如有冲突，只需修复一次</li>
+</ul>
+</li>
+</ol>
+<h4 id="怎么检测"><a href="#怎么检测" class="headerlink" title="怎么检测"></a>怎么检测</h4><p>通过三路合并检测：</p>
+<ol>
+<li>通过<code>git merge-base personal master</code>找出共同的节点，称之为：base_sha</li>
+<li>通过<code>git merge-tree base_sha personal master</code>获取合并后的结果</li>
+<li>如果输出有<code>changed in both</code>字样，那说明存在冲突</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
+<li>定期拉取主干分支，更新到个人分支，保持与主干分支差异最想</li>
+<li>开发完成后，尽快合入</li>
+<li>根据冲突提前检测，统计出频繁冲突文件列表，能够提前预警</li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂谈</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">流程</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">合并冲突</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <!-- <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a> -->
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJklEQVR42u3aQW7DMAwEwPz/0+4Diji7lFsg0vhUBIbN8YElRb5e8XX9uma/5295/cWFgYHxtYzr9krCvQ/i/v72c7ylYmBgHMB4l8Hu70kASfJNqB9ixsDAwIgT5X0KXiFhYGBgtI+btaZJ4YiBgYGx0sQmj25T6iyhY2BgnMbIk+b///0n8w0MDIyvYlzlNSvp2rDqqDAwMLZm5K9pC8f8mbPlDAwMjDMZTx3fzwJKIimO2zAwMDZlzA7x29HC+upY9H8DAwNjI0aSUtuEmAw+k9+L2DAwMI5hrCTQfLSZhF6vgGBgYBzAuC/dZk1snnBX7i8qUAwMjK9ltIOB+5fVR/nlyOFDJBgYGFszni3gVg7689WKty0uBgbGdoyVg/tZKTlbOyu2RTAwMDZlzF7cJtDZ4CEqPTEwMA5gzF6cvCxfOJsNR+vSEAMDYyNGEnoeRPKBkqLzw7IFBgbGpoz8oD9/9FOLZXXSx8DAOICRH/3PliHWSfXwEgMDYztG22QmC2HtWHQ2EMXAwDiNsT5ufKzUK1M/BgbGOYy8FFtfnvgQVvzRMTAw9mZc5ZU3rrMxQN24YmBgHMBo09xTJWByMJc3yRgYGCcw8iT71JgzP4yrm1gMDIytGeuJrx0qzBraqBfHwMDAiBvadnjZLnlgYGBg5KXhylpYckgXrXFgYGAcwMjLu/bgrG1c220KDAyMExiz1nFlwWLW1j4w1MTAwPg+xg/uHPAuLf6fyAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/04/27/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
 
 
           </div>
@@ -228,9 +376,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,

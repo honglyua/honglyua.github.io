@@ -49,7 +49,7 @@
 		  <h1 class="header-author"><a href="/">Honglyua</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">生活不易，卖马为生</p>
+		<p class="header-subtitle">工作要快，生活要慢</p>
 		
 
 		<nav class="header-menu">
@@ -79,7 +79,7 @@
 				
 					<a class="github" target="_blank" href="https://github.com/honglyua" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="zhihu" target="_blank" href="/zhihu.com/people/honglyua" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="zhihu" target="_blank" href="https://zhihu.com/people/honglyua" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
 			</div>
 		</nav>
@@ -103,7 +103,7 @@
 			  <h1 class="header-author js-header-author">Honglyua</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>生活不易，卖马为生<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>工作要快，生活要慢<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -118,7 +118,7 @@
 					
 						<a class="github" target="_blank" href="https://github.com/honglyua" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="/zhihu.com/people/honglyua" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="zhihu" target="_blank" href="https://zhihu.com/people/honglyua" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
 				</div>
 			</nav>
@@ -145,6 +145,98 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-git-merge" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/27/git-merge/">分支合并提前检测冲突</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/27/git-merge/" class="archive-article-date">
+  	<time datetime="2019-04-27T12:22:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/assets/blogImg/git-merge-conflict.png" width="500"></p>
+
+<blockquote>
+<p>多人开发场景中，经常会出现分支合并冲突的现象，同时解决起来也很麻烦.<br>因为涉及多人修改同一处代码，有可能这段代码修改，已经过去很久了，很难知道应该保留哪一方的修改。<br>严重影响了开发效率，为此需要提前发现冲突，提前修复</p>
+</blockquote>
+<h3 id="为什么要提前检测，能带来什么好处？"><a href="#为什么要提前检测，能带来什么好处？" class="headerlink" title="为什么要提前检测，能带来什么好处？"></a>为什么要提前检测，能带来什么好处？</h3><ol>
+<li>早发现，早整治，能100%无冲突合入，提高合入率，减少返工率</li>
+<li>能发现哪些文件哪些函数经常出现冲突，对这些文件及函数进行统一整改</li>
+</ol>
+        
+          <a class="article-more-a" href="/2019/04/27/git-merge/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">流程</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">合并冲突</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/27/git-merge/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -333,6 +425,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">合并冲突</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -383,7 +491,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
           <div class="aboutme-wrap" id="js-aboutme">
-            微信公众号：honglyua&lt;br&gt;人在江湖，身不由己&lt;br&gt;卖马为生，小本经营&lt;br/&gt;&lt;br/&gt;
+            微信公众号：honglyua&lt;br&gt;人在江湖，身不由己&lt;br&gt;工作要快，生活要慢&lt;br/&gt;&lt;br/&gt;
           </div>
   	  	
     	</section>
